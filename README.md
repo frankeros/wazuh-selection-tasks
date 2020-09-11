@@ -1,1 +1,0 @@
-# wazuh-selection-tasks-

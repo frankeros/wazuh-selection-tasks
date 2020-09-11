@@ -1,0 +1,5 @@
+.BasePage {}
+
+.PageContent {
+  max-width: calc(65%) !important; 
+}
