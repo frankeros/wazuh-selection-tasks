@@ -11,6 +11,7 @@ You need to clone this repo.
 * [Task 1: Getting familiar with Wazuh](task-1-getting-familiar-with-wazuh)
 * [Task 2: Extracting alert information](/task-2)
 * [Task 4: Simple API REST with Node.js](/task-4)
+* [Task 5: Elastic stack](/task-5)
 * [Task 6: Simple App with React](/task-6/my-app)
 
 
