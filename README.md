@@ -8,12 +8,11 @@ You need to clone this repo.
 `$ git clone https://github.com/frankeros/wazuh-selection-tasks.git`
 
 ### Sections
-* [Task 1: Getting familiar with Wazuh](task-1-getting-familiar-with-wazuh)
+* [Task 1: Getting familiar with Wazuh]()
 * [Task 2: Extracting alert information](/task-2)
 * [Task 4: Simple API REST with Node.js](/task-4)
 * [Task 5: Elastic stack](/task-5)
 * [Task 6: Simple App with React](/task-6/my-app)
-
 
 ## Task 1 Getting familiar with Wazuh
 
@@ -26,7 +25,7 @@ You need to clone this repo.
 
 >You can see they here.
 
-![alt text](https://github.com/frankeros/wazuh-selection-tasks/assets/deamons.png)
+![alt text](/assets/deamons.png)
 
 #### 3. What physical file stores the agent registry information?
 >The Wazuh manager uses the /var/ossec/etc/client.keys file to store the registration record of each Wazuh agent, which includes ID, name, IP, and key.
