@@ -6,7 +6,7 @@ Date.prototype.isValid = function () {
   // An invalid date object returns NaN for getTime() and NaN is the only
   // object not strictly equal to itself.
   return this.getTime() === this.getTime();
-}; 
+};
 
 const printLastAlert = () => {
   try {
@@ -29,8 +29,10 @@ const getData = () => {
 };
 
 const readFile = () => {
+  const filePath = args.indexOf('--test') !== -1 ? './test-data.json' :
+    '/var/ossec/logs/alerts/alerts.json'
   try {
-    return fs.readFileSync('/var/ossec/logs/alerts/alerts.json');
+    return fs.readFileSync(filePath);
   } catch (error) {
     throw 'Error: The file does not exist.\n';
   }
@@ -55,7 +57,7 @@ const getInfo = (raw) => {
     };
   } catch (error) {
     throw 'Error: The log is not a valid object';
-  }  
+  }
 }
 
 const getValue = (object, property) => {
@@ -75,25 +77,25 @@ const printInfo = (info) => {
 
 const printAlertsGenerated = (rawDate) => {
   const date = new Date(rawDate);
-  if(!date.isValid()) {
+  if (!date.isValid()) {
     console.error('Error: You must send a valid value for --count with the format YYYY/MM/DD');
     return;
   }
   const data = getData();
   let dayAlerts = 0;
   data.every((item) => {
-    const log = getInfo(item);    
+    const log = getInfo(item);
     const logDate = new Date(new Date(log['Timestamp']).toDateString());
 
-    if(logDate - date === 0)
+    if (logDate - date === 0)
       ++dayAlerts;
     return logDate <= date;
   });
   console.log(`Alerts generated in ${rawDate}: ${dayAlerts}.`)
 }
 
-if(args.indexOf('--count') !== -1) {
-  const param = args[args.indexOf('--count') + 1];  
+if (args.indexOf('--count') !== -1) {
+  const param = args[args.indexOf('--count') + 1];
   printAlertsGenerated(param);
 } else {
   printLastAlert();
